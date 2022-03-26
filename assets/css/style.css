@@ -1,0 +1,712 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap");
+:root {
+  --text-color: #72727d;
+  --white-color: #fff;
+  --black-color: #121216;
+  --gray-color: #191922;
+  --gray-dark-color: #23232d;
+  --border-color: #32323d;
+  --primary-color: #ef5466;
+
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: var(--primary-font);
+  color: var(--white-color);
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #191922;
+  border-left: 1px solid #32323d;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #52525d;
+  border: 2px solid var(--gray-dark-color);
+  border-radius: 10px;
+}
+.text {
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.text--medium {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 1.5rem 0;
+}
+h2,
+h3,
+h4 {
+  font-family: var(--secondary-font);
+  font-weight: 600;
+}
+h2 {
+  font-size: 2.2rem;
+  margin: 1rem 0;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.8rem;
+}
+h5 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+svg {
+  fill: var(--white-color) !important;
+}
+i {
+  cursor: pointer;
+  color: var(--white-color);
+  font-size: 1.6rem;
+}
+.wrapper {
+  margin: auto;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 8rem;
+  width: 22rem;
+  background-color: var(--gray-color);
+  border-right: 1px solid var(--border-color);
+  z-index: 100;
+}
+.main {
+  padding-left: 22rem;
+  background-color: var(--black-color);
+}
+.profile {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 3rem 2.8rem 1.5rem;
+  z-index: 100;
+}
+.profile-image {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 1.6rem 5rem #ffffff1c;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+.list-container {
+  height: calc(100% - 15.9rem - 8rem);
+  overflow-y: auto;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.list-container::-webkit-scrollbar-track {
+  border-left: none;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background-color: #c0c0c8 !important;
+  border: none;
+  border-radius: 10px;
+}
+.list-container:hover::-webkit-scrollbar {
+  width: 4px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2.8rem;
+}
+.list .item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.list .item .text {
+  padding-left: 3rem;
+  transition: all 0.2s ease;
+}
+.list .item.active {
+  position: relative;
+}
+.list .item.active * {
+  color: var(--primary-color);
+  fill: var(--primary-color);
+}
+.list .item.active::before {
+  content: "";
+  position: absolute;
+  left: -2.8rem;
+  height: 2.8rem;
+  width: 4px;
+  background-color: var(--primary-color);
+}
+.list .item:hover * {
+  color: var(--primary-color);
+  fill: var(--primary-color) !important;
+}
+.list svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  transition: all 0.2s ease;
+}
+.list h4 {
+  margin-left: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-search {
+  position: relative;
+  flex: 1;
+}
+.input-search input {
+  width: 60%;
+  padding: 1rem 4rem;
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+  font-family: var(--primary-font);
+  color: #a9a9a9;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+}
+.input-search input::placeholder {
+  color: #a9a9a9;
+}
+.input-search svg {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--gray-color);
+}
+.main-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-left: none;
+  padding: 1rem 1.6rem;
+}
+
+button.cta {
+  color: var(--white-color);
+  background: linear-gradient(to right, #eb2525, #fdabab);
+  padding: 1rem 1.8rem;
+  border: none;
+  font-family: var(--primary-font);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+button.cta:hover {
+  background: linear-gradient(to right, #eb2525e7, #fdababea);
+}
+
+.right {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-content {
+  padding: 2rem 4rem 8rem;
+  margin: 0 auto;
+}
+.recently-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+i.fa.fa-angle-left {
+  margin-right: 1.2rem;
+}
+i.fa.fa-angle-left,
+i.fa.fa-angle-right {
+  font-size: 2.2rem;
+}
+.recently-playlist {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.recently-playlist::-webkit-scrollbar {
+  display: none;
+}
+.song-item {
+  min-width: 20%;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.song-item .play-btn {
+  display: none;
+}
+.song-item h5 {
+  margin: 4px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.song-item .text {
+  margin-top: auto;
+}
+.song-image {
+  position: relative;
+}
+.song-image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.089);
+  opacity: 0;
+}
+.song-item:hover .song-image::after {
+  opacity: 1;
+}
+.song-item:hover .action .action-item:not(:first-child) {
+  opacity: 1;
+}
+.song-item img {
+  width: 100%;
+  height: 21rem;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.action {
+  position: absolute;
+  bottom: 6.5rem;
+  left: 1.4rem;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+.action .action-item {
+  width: 3.8rem;
+  height: 3.8rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  display: inline-block;
+  margin-right: 1rem;
+  background-color: var(--white-color);
+  border-radius: 10rem;
+  transition: all 0.18s linear;
+}
+.action-item:hover {
+  transform: scale(1.2);
+}
+.action .action-item:not(:first-child) {
+  opacity: 0;
+}
+.action .action-item svg {
+  width: 1.6rem;
+  fill: var(--gray-dark-color) !important;
+}
+.category {
+  margin-top: 4rem;
+}
+.category-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.category-list::-webkit-scrollbar {
+  display: none;
+}
+.category-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.category-item {
+  min-width: 23rem;
+  height: 120px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 3rem;
+}
+.category-item:hover {
+  opacity: 0.8;
+}
+.category-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.category-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.9rem;
+  background-color: var(--gray-dark-color);
+  z-index: 200;
+}
+.player-info {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+}
+.player-info img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+}
+.player-controls {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.control1 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+}
+.control2 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.player-controls button {
+  background-color: transparent;
+  border: none;
+}
+
+.player-controls svg {
+  cursor: pointer;
+  width: 1.8rem;
+  transition: all 0.2s ease;
+}
+.suffle-btn {
+  width: 2rem !important;
+  height: 2rem;
+}
+.btn-replay.active *,
+.btn-suffle.active * {
+  fill: var(--primary-color);
+}
+.player-controls svg.replay-btn {
+  margin-right: 2rem;
+}
+.player-controls svg.suffle-btn {
+  margin-left: 2rem;
+}
+.player-wave {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5px;
+}
+
+.wave-1 {
+  height: 10px;
+  width: 3px;
+  margin-right: 3px;
+  background: var(--primary-color);
+  border-radius: 10px 10px 0 0;
+  animation: unset;
+}
+
+.wave-1:nth-child(2) {
+  height: 1.3rem;
+  /* animation-delay: 0.4s; */
+}
+.wave-1:nth-child(3) {
+  height: 0.8rem;
+  /* animation-delay: 0.8s; */
+}
+
+.btn-toggle-play {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  background-color: #383838;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 1rem;
+  margin: 0 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.btn-toggle-play svg:first-child {
+  display: inline-block;
+}
+.btn-toggle-play svg:last-child {
+  display: none;
+}
+.btn-toggle-play.playing svg:last-child {
+  display: inline-block;
+}
+.btn-toggle-play.playing svg:first-child {
+  display: none;
+}
+.current-time {
+  margin-left: 4rem;
+}
+.player-controls span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.player-controls input[type="range"] {
+  margin: 0 1rem;
+  width: 50%;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.player-controls input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px;
+  background-color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Special styling for WebKit/Blink */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* javascript class wave */
+.active .wave-1 {
+  animation: wave 0.5s linear infinite;
+}
+
+.active .wave-1:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.active .wave-1:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.vol {
+  display: flex;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.vol svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.artist {
+  margin-top: 4rem;
+}
+
+.artist-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.artist-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.artist-list::-webkit-scrollbar {
+  display: none;
+}
+
+.artist-item {
+  min-width: 15rem;
+  margin-right: 2.5rem;
+}
+
+.artist-item img {
+  width: 100%;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes wave {
+  0% {
+    height: 1rem;
+  }
+  50% {
+    height: 1.5rem;
+  }
+  100% {
+    height: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    height: 100vh;
+  }
+  .song-item {
+    min-width: 40%;
+  }
+  i.fa.fa-angle-left {
+    margin-right: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .sidebar {
+    display: none;
+  }
+  .main {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main {
+    height: auto;
+    padding-bottom: 10rem;
+  }
+  .input-search input {
+    width: 90%;
+  }
+  button.cta {
+    padding: 0.8rem 1.6rem;
+  }
+  .song-item {
+    min-width: 60%;
+  }
+  .main-content {
+    padding: 0 1.5rem;
+  }
+  .player {
+    height: auto;
+    padding: 1rem 0;
+  }
+  .player svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .btn-toggle-play {
+    margin: 0 1.6rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .vol {
+    margin-left: 1rem;
+  }
+  .player-wave {
+    height: auto;
+    width: auto;
+    margin: 0 5px;
+  }
+  .player-text {
+    margin-left: 5px;
+  }
+  .player-name {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .player-single {
+    font-size: 1rem;
+  }
+  .player-controls {
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .control1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 80%;
+    margin: 0;
+  }
+  .control2 {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+  .current-time {
+    margin-left: 0;
+  }
+  .player-info {
+    flex-basis: 40%;
+  }
+  .player-info img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    margin: 0;
+  }
+}
